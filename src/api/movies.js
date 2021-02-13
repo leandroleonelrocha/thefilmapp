@@ -81,3 +81,28 @@ export function getMovieVideo(movieId){
   })
 
 }
+
+export function getPopularMovie(page = 1){
+  const url = `${API_URL}/movie/popular?api_key=${API_KEY}&lenguage=${LANG}&page=${page}`;
+
+  return fetch(url).then((response) => {
+    return response.json();
+  }).then( (result) => {
+    return result;
+  })
+
+
+}
+
+export function getSearchMovie(search){
+
+  const url = `${API_URL}/search/movie?api_key=${API_KEY}&lenguage=${LANG}&query=${search}`;
+
+  return fetch(url).then((response) => {
+    return response.json();
+  }).then( (result) => {
+    return result;
+  })
+
+
+}
